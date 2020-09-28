@@ -93,3 +93,8 @@ variable "vpc_id" {
   description = "[VPC id for VPN Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway#vpc_id)"
   type        = string
 }
+
+variable "vpn_gateway_id" {
+  description = "[VPN gateway id for VPN Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway#id)"
+  type        = string
+}

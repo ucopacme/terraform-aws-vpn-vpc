@@ -7,7 +7,6 @@ this module creates AWS vpn for vpc
 
 optionally  routing:
 
-* [vpn gateway](https://www.terraform.io/docs/providers/aws/r/vpn_gateway.html)
 * [vpn gateway route propagation](https://www.terraform.io/docs/providers/aws/r/vpn_gateway_route_propagation.html)
 * [vpn connection route](https://www.terraform.io/docs/providers/aws/r/vpn_connection_route.html)
 
@@ -43,6 +42,7 @@ No requirements.
 | tunnel2\_preshared\_key | [vpn connection preshared key of the second VPN tunnel. The preshared key must be between 8 and 64 characters in length and cannot start with zero. Allowed characters are alphanumeric characters, periods(.) and underscores(\_)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection#tunnel2_preshared_key) | `string` | `null` | no |
 | type | [customer gateway type](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway#type) | `string` | `"ipsec.1"` | no |
 | vpc\_id | [VPC id for VPN Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway#vpc_id) | `string` | `null` | no |
+| vpn\_gateway\_id | [VPN gateway id for VPN Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway#id) | `string` | n/a | yes |
 
 ## Outputs
 

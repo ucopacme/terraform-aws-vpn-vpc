@@ -10,7 +10,8 @@ inputs = {
     "ucop:group"       = local.group
     "ucop:source"      = local.source
   }
-  vpc_id = "vpc-123a4bcd567e8f90g"
+  vpc_id         = "vpc-123a4bcd567e8f90g"
+  vpn_gateway_id = "vpn-gw-123a4bcd56"
 }
 
 locals {
