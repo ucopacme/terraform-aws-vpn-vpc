@@ -2,12 +2,12 @@
 
 this module creates AWS vpn for vpc
 
-* [vpn gateway](https://www.terraform.io/docs/providers/aws/r/vpn_gateway.html)
 * [customer gateway](https://www.terraform.io/docs/providers/aws/r/customer_gateway.html)
 * [vpn connection](https://www.terraform.io/docs/providers/aws/r/vpn_connection.html)
 
 optionally  routing:
 
+* [vpn gateway](https://www.terraform.io/docs/providers/aws/r/vpn_gateway.html)
 * [vpn gateway route propagation](https://www.terraform.io/docs/providers/aws/r/vpn_gateway_route_propagation.html)
 * [vpn connection route](https://www.terraform.io/docs/providers/aws/r/vpn_connection_route.html)
 
@@ -31,6 +31,7 @@ No requirements.
 | bgp\_asn | [customer gateway Border Gateway Protocol (BGP) Autonomous System Number (ASN)](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway#bgp_asn) | `string` | `65000` | no |
 | destination\_cidr\_blocks | vpn connection route destination cidr block for static routes. Routes to destinations will be propagated to the route tables defined in `route_table_ids`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection_route#destination_cidr_block) | `list(string)` | `[]` | no |
 | enabled | Set to `false` to prevent the module from creating resources | `bool` | `true` | no |
+| enabled\_vpn\_gateway | Set to `true` to enable the module to create vpn gateway resource | `bool` | `false` | no |
 | ip\_address | [customer gateway internet routable external interface IP address](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway#ip_address) | `string` | n/a | yes |
 | name | [Resource name](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn#name) | `string` | `null` | no |
 | route\_table\_ids | [vpn gateway route propagation route tables ids](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway_route_propagation#route_table_id) | `list(string)` | `[]` | no |

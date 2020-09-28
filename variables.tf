@@ -15,11 +15,19 @@ variable "destination_cidr_blocks" {
   description = "vpn connection route destination cidr block for static routes. Routes to destinations will be propagated to the route tables defined in `route_table_ids`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection_route#destination_cidr_block)"
   type        = list(string)
 }
+
 variable "enabled" {
   default     = true
   description = "Set to `false` to prevent the module from creating resources"
   type        = bool
 }
+
+variable "enabled_vpn_gateway" {
+  default     = false
+  description = "Set to `true` to enable the module to create vpn gateway resource"
+  type        = bool
+}
+
 
 variable "ip_address" {
   description = "[customer gateway internet routable external interface IP address](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway#ip_address)"

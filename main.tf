@@ -3,12 +3,12 @@
  *
  * this module creates AWS vpn for vpc
  *
- * * [vpn gateway](https://www.terraform.io/docs/providers/aws/r/vpn_gateway.html)
  * * [customer gateway](https://www.terraform.io/docs/providers/aws/r/customer_gateway.html)
  * * [vpn connection](https://www.terraform.io/docs/providers/aws/r/vpn_connection.html)
  *
  * optionally  routing:
  *
+ * * [vpn gateway](https://www.terraform.io/docs/providers/aws/r/vpn_gateway.html)
  * * [vpn gateway route propagation](https://www.terraform.io/docs/providers/aws/r/vpn_gateway_route_propagation.html)
  * * [vpn connection route](https://www.terraform.io/docs/providers/aws/r/vpn_connection_route.html)
  *
@@ -18,7 +18,7 @@
 
 resource "aws_vpn_gateway" "this" {
   amazon_side_asn = var.amazon_side_asn
-  count      = var.enabled ? 1 : 0
+  count      = var.enabled_vpn_gateway ? 1 : 0
   tags       = merge(var.tags, map("Name", var.name))
   vpc_id          = var.vpc_id
 }
