@@ -1,8 +1,11 @@
 inputs = {
-  ip_address = "1.2.3.4"
-  enabled    = "true"
+
+  destination_cidr_blocks = ["12.34.56.78/32"]
+  ip_address              = "1.2.3.4"
+  enabled                 = "true"
   name = join("-", [local.application, local.environment, "vpn"
   ])
+  static_routes_only = true
   tags = {
     "ucop:application" = local.application
     "ucop:createdBy"   = local.createdBy

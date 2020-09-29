@@ -43,7 +43,7 @@ resource "aws_vpn_gateway_route_propagation" "this" {
 }
 
 resource "aws_vpn_connection_route" "this" {
-  count                  = var.enabled && var.static_routes_only == "true" ? length(var.destination_cidr_blocks) : 0
+  count                  = var.enabled && var.static_routes_only ? length(var.destination_cidr_blocks) : 0
   vpn_connection_id      = join("", aws_vpn_connection.this.*.id)
   destination_cidr_block = element(var.destination_cidr_blocks, count.index)
 }
