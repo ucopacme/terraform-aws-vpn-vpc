@@ -7,3 +7,7 @@ output "aws_vpn_connection_id" {
   description = "[vpn gateway id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection#id)"
   value       = join("", aws_vpn_connection.this.*.id)
 }
+output "customer_gateway_configuration" {
+  description = "[vpn gateway id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection#customer_gateway_configuration)"
+  value       = join("", aws_vpn_connection.this.*.customer_gateway_configuration)
+}
