@@ -5,6 +5,7 @@ inputs = {
   enabled                 = "true"
   name = join("-", [local.application, local.environment, "vpn"
   ])
+  route_table_ids    = ["rtb-123456"]
   static_routes_only = true
   tags = {
     "ucop:application" = local.application
