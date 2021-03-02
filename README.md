@@ -50,3 +50,4 @@ No requirements.
 |------|-------------|
 | aws\_customer\_gateway\_id | [vpn gateway id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway#id) |
 | aws\_vpn\_connection\_id | [vpn gateway id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection#id) |
+| customer\_gateway\_configuration | [vpn gateway id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection#customer_gateway_configuration) |
