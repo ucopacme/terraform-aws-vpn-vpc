@@ -19,7 +19,8 @@ resource "aws_customer_gateway" "this" {
   bgp_asn    = var.bgp_asn
   count      = var.enabled ? 1 : 0
   ip_address = var.ip_address
-  tags       = merge(var.tags, tomap("Name", var.name))
+ # tags       = merge(var.tags, map("Name", var.name))
+  tags       = var.tags
   type       = var.type
 }
 
@@ -27,7 +28,8 @@ resource "aws_vpn_connection" "this" {
   count                 = var.enabled ? 1 : 0
   customer_gateway_id   = join("", aws_customer_gateway.this.*.id)
   static_routes_only    = var.static_routes_only
-  tags                  = merge(var.tags, tomap("Name", var.name))
+  #tags                  = merge(var.tags, map("Name", var.name))
+  tags                  = var.tags
   tunnel1_inside_cidr   = var.tunnel1_inside_cidr
   tunnel2_inside_cidr   = var.tunnel2_inside_cidr
   tunnel1_preshared_key = var.tunnel1_preshared_key
